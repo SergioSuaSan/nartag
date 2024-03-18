@@ -93,8 +93,8 @@
 							 <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="card border-0 rounded-4 bg-transparent">
                                     <div class="div position-relative">
-                                        <img class="card-img-top rounded-4"
-                                            src="{Fotos}" alt="Title" />
+                                        <a href="{FotosyTituloURL}">  <img class="card-img-top rounded-4"
+                                            src="{Fotos}" alt="Title" /></a>
                                         <p class="position-absolute top-0 end-0 m-3 py-1 px-2 bg-dark rounded-3"><i
                                                 class="fa fa-star text-warning" aria-hidden="true"> <span
                                                     class="text-white fw-semibold"><xsl:value-of select="Rating"/></span></i></p>
@@ -131,7 +131,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body text-white">
-                                        <h4 class="card-title"> <xsl:value-of select="Titulo"/></h4>
+                                        <a href="{FotosyTituloURL}" class="text-decoration-none text-white"> <h5 class="card-title"> <xsl:value-of select="Titulo"/></h5></a>
                                         <div class="div">
                                             <a href="{Capitulo1URL}"
                                                 class="btn btn-outline-light w-100 rounded-5 p-0 mb-3"> <xsl:value-of select="Capitulo1TextoCapitulo"/>
