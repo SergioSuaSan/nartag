@@ -89,40 +89,71 @@
                                 aria-hidden="true"></i></button>
                         <p class="ms-3 text-white d-inline">Actualizaciones</p>
                         <div class="row">
-                            <div class="col-sm-6 col-md-4 col-lg-3">
+						<xsl:for-each select="manguas/mangua">
+							 <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="card border-0 rounded-4 bg-transparent">
                                     <div class="div position-relative">
                                         <img class="card-img-top rounded-4"
-                                            src="img/CN7Tvn0DbCBukixoV1sQSwo8HSrnUkpki9pKq596.jpg" alt="Title" />
+                                            src="{Fotos}" alt="Title" />
                                         <p class="position-absolute top-0 end-0 m-3 py-1 px-2 bg-dark rounded-3"><i
                                                 class="fa fa-star text-warning" aria-hidden="true"> <span
-                                                    class="text-white fw-semibold">4.4</span></i></p>
+                                                    class="text-white fw-semibold"><xsl:value-of select="Rating"/></span></i></p>
                                         <div
                                             class="position-absolute bottom-0 mb-4 ms-1 row  w-100 text-center justify-content-between ">
                                             <div class="col">
+                                            <xsl:choose>
+                                                <xsl:when test="EstiloDeManguaTexto = 'Shōnen'">
                                                 <a href="https://nartag.com/biblioteca?demography=shonen"
-                                                    class="text-decoration-none btn btn-danger">Shojo</a>
+                                                    class="text-decoration-none btn btn-warning fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>
+                                                </xsl:when>
+                                                <xsl:when test="EstiloDeManguaTexto = 'Seinen'">
+                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                    class="text-decoration-none btn btn-danger fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>
+                                                </xsl:when>
+                                                <xsl:when test="EstiloDeManguaTexto = 'Shōjo'">
+                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                    class="text-decoration-none btn bg-danger-subtle  fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>
+                                                </xsl:when>
+                                                <xsl:when test="EstiloDeManguaTexto = 'Josei'">
+                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                    class="text-decoration-none btn btn-info fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                    class="text-decoration-none btn btn-danger fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>              
+                                                </xsl:otherwise>
+                                            </xsl:choose>
                                             </div>
                                             <div class="col">
                                                 <a href="https://nartag.com/biblioteca?demography=shonen"
-                                                    class="text-decoration-none btn btn-danger">Shojo</a>
+                                                    class="text-decoration-none btn btn-dark fw-semibold text-white"><xsl:value-of select="TipoDeManguaTexto"/></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-body text-white">
-                                        <h4 class="card-title">¡Soy la villana de artes marciales más fuerte!</h4>
+                                        <h4 class="card-title"> <xsl:value-of select="Titulo"/></h4>
                                         <div class="div">
-                                            <a href="https://nartag.com/v/soy-la-villana-de-artes-marciales-mas-fuerte/capitulo-95"
-                                                class="btn btn-outline-light w-100 rounded-5 p-0 mb-3"> Capitulo 94
-                                                <br /> <small>hace 6 horas</small></a>
-                                            <a href="https://nartag.com/v/soy-la-villana-de-artes-marciales-mas-fuerte/capitulo-95"
-                                                class="btn btn-outline-light w-100 rounded-5 p-0"> Capitulo 94 <br />
-                                                <small>hace 6 horas</small></a>
+                                            <a href="{Capitulo1URL}"
+                                                class="btn btn-outline-light w-100 rounded-5 p-0 mb-3"> <xsl:value-of select="Capitulo1TextoCapitulo"/>
+                                                <br /> <small><xsl:value-of select="Capitulo1TextoFecha"/></small></a>
+                                            <xsl:choose>
+                                                <xsl:when test="Capitulo2TextoCapitulo != ''">
+                                                <a href="{Capitulo2URL}"
+                                                class="btn btn-outline-light w-100 rounded-5 p-0"> <xsl:value-of select="Capitulo2TextoCapitulo"/><br />
+                                                <small><xsl:value-of select="Capitulo2TextoFecha"/></small></a>
+                                                
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    
+                                                </xsl:otherwise>
+                                            </xsl:choose>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
+						</xsl:for-each>
+                           
                         </div>
                     </div>
                     <div class="col-xl-1 col-lg-12 bg-light bg-opacity-10 rounded-4 text-xl-center">
