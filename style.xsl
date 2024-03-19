@@ -103,29 +103,29 @@
                                             <div class="col">
                                             <xsl:choose>
                                                 <xsl:when test="EstiloDeManguaTexto = 'Shōnen'">
-                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                <a href="{EstiloDeMangua}"
                                                     class="text-decoration-none btn btn-warning fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>
                                                 </xsl:when>
                                                 <xsl:when test="EstiloDeManguaTexto = 'Seinen'">
-                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                <a href="{EstiloDeMangua}"
                                                     class="text-decoration-none btn btn-danger fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>
                                                 </xsl:when>
                                                 <xsl:when test="EstiloDeManguaTexto = 'Shōjo'">
-                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                <a href="{EstiloDeMangua}"
                                                     class="text-decoration-none btn bg-danger-subtle  fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>
                                                 </xsl:when>
                                                 <xsl:when test="EstiloDeManguaTexto = 'Josei'">
-                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                <a href="{EstiloDeMangua}"
                                                     class="text-decoration-none btn btn-info fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                <a href="{EstiloDeMangua}"
                                                     class="text-decoration-none btn btn-danger fw-semibold text-white"><xsl:value-of select="EstiloDeManguaTexto"/></a>              
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                             </div>
                                             <div class="col">
-                                                <a href="https://nartag.com/biblioteca?demography=shonen"
+                                                <a href="{TipoMangua}"
                                                     class="text-decoration-none btn btn-dark fw-semibold text-white"><xsl:value-of select="TipoDeManguaTexto"/></a>
                                             </div>
                                         </div>
